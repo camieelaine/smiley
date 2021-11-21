@@ -1,24 +1,22 @@
-import { FaceContainer } from "./FaceContainer";
 import { BackgroundCircle } from "./BackgroundCircle";
 import { Eyes } from "./Eyes";
 import { Mouth } from "./Mouth";
+import { FaceContainer } from "./FaceContainer";
 
-const width = 960;
-const height = 500;
-
+/* Face module */
 export const Face = ({
   width,
   height,
+  color,
   centerX,
   centerY,
   strokeWidth,
   eyeOffsetX,
   eyeOffsetY,
   eyeRadius,
-  mouthRadius,
   mouthWidth,
+  mouthRadius,
 }) => (
-  //Pass in the props
   <FaceContainer
     width={width}
     height={height}
@@ -27,14 +25,17 @@ export const Face = ({
   >
     <BackgroundCircle
       /* props*/
+      color={color}
       radius={centerY - strokeWidth / 2}
       strokeWidth={strokeWidth}
     />
+
     <Eyes
       eyeOffsetX={eyeOffsetX}
       eyeOffsetY={eyeOffsetY}
       eyeRadius={eyeRadius}
     />
+
     <Mouth mouthRadius={mouthRadius} mouthWidth={mouthWidth} />
   </FaceContainer>
 );
